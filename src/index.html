@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Streamhub EMI Calculator</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <h1>Loan EMI Calculator</h1>
+    <p>Calculate your monthly payments and loan costs</p>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Loan Details</h2>
+
+      <label for="loanAmount">Loan Amount (₹)</label>
+      <input id="loanAmount" type="number" min="1" value="2500000" />
+
+      <label for="interestRate">Interest Rate (% per year)</label>
+      <input id="interestRate" type="number" min="0" step="0.1" value="10" />
+
+      <label for="loanTenure">Loan Tenure (years)</label>
+      <input id="loanTenure" type="number" min="1" max="40" value="10" />
+
+      <button id="calculateBtn" type="button">Calculate EMI</button>
+      <p id="errorMessage" role="alert" hidden></p>
+    </section>
+
+    <section class="panel results" aria-live="polite">
+      <h2>Loan Summary</h2>
+
+      <div class="summary-card">
+        <span>Monthly EMI</span>
+        <strong id="monthlyEmi" data-testid="monthly-emi">₹0.00</strong>
+      </div>
+
+      <div class="summary-card">
+        <span>Total Interest</span>
+        <strong id="totalInterest" data-testid="total-interest">₹0.00</strong>
+      </div>
+
+      <div class="summary-card">
+        <span>Total Payment</span>
+        <strong id="totalPayment" data-testid="total-payment">₹0.00</strong>
+      </div>
+
+      <h2>Principal vs Interest</h2>
+      <div class="chart-container">
+        <canvas id="emiChart" role="img"
+          aria-label="Pie chart showing principal and total interest"></canvas>
+      </div>
+
+      <p id="chartStatus" role="status">Calculate EMI to update the chart.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Calculation Report</h2>
+      <p>Loan Amount: <strong id="reportLoanAmount">₹25,00,000</strong></p>
+      <p>Annual Interest Rate: <strong id="reportInterestRate">10%</strong></p>
+      <p>Loan Tenure: <strong id="reportTenure">10 years</strong></p>
+      <p>Monthly Payments: <strong id="reportMonths">120</strong></p>
+    </section>
+  </main>
+</body>
+</html>
