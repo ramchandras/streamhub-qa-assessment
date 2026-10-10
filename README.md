@@ -1,99 +1,38 @@
 
-# Streamhub QA Automation Assessment
+## SQL Execution Evidence
 
-## Overview
+Screenshots of the SQL schemas and query outputs are available in
+the `evidence/` directory.
 
-This project demonstrates UI automation, API testing, SQL queries,
-and an AI-assisted locator self-healing exercise.
+- `transaction-table.png`
+- `round-trip-query.png`
+- `ipl-table.png`
+- `ipl-streak-query.png`
 
-## Technology Stack
+The SQL scripts use illustrative sample data to demonstrate the
+required query logic. The IPL sample data is not actual IPL 2024 data.
 
-- Node.js
-- Playwright
-- Cucumber
-- JavaScript
-- SQLite-compatible SQL examples
-- HTML test reporting
+## Latest Test Execution
 
-## Project Structure
+The latest recorded Cucumber test run completed with:
 
-- `src/` — EMI Calculator web application
-- `features/` — Cucumber feature files
-- `features/step-definitions/` — Cucumber step implementations
-- `pages/` — Page Object Model
-- `support/` — browser hooks and custom World
-- `tests/sql/` — SQL challenge scripts
-- `tests/broken-locators.example.js` — intentionally brittle locator examples
-- `docs/ai-self-healing.md` — AI self-healing approach
-- `reports/` — generated Cucumber HTML report
+- Scenarios passed: 6
+- Steps passed: 25
+- Failures: 0
 
-## Prerequisites
-
-- Node.js and npm
-- Git
-
-## Installation
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Install Chromium:
-
-```bash
-npx playwright install chromium
-```
-
-## Run the Application
-
-Start the EMI Calculator from the project root:
-
-```bash
-npx http-server src -p 3000
-```
-
-Keep the server running.
-
-## Run Automated Tests
-
-In a separate terminal:
-
-```bash
-npm run test:e2e
-```
-
-The Cucumber report is generated at:
-
-`reports/cucumber-report.html`
-
-## SQL Challenges
-
-The SQL files demonstrate:
-
-1. Similar reverse transactions within 24 hours.
-2. Three consecutive matches with at least 30 runs.
-
-The included IPL records are illustrative sample data, not verified IPL 2024 statistics.
-
-## AI Self-Healing Exercise
-
-See `docs/ai-self-healing.md` and
-`tests/broken-locators.example.js`.
-
-The intentionally broken locator examples are excluded from normal test
-execution. The documentation describes the proposed AI diagnosis,
-repair, and validation workflow.
-
-## Test Results
-
-Record the actual test execution date, scenario count, step count,
-and any failures here after the final run.
-
-Include a screenshot or other execution evidence with the submission.
+See `reports/cucumber-report.html` for the execution report.
+Regenerate the report after any changes to the tests.
 
 ## AI Tool Reflection
 
-Document the AI tools used, the suggestions accepted or rejected,
-any debugging performed, and the validation carried out by the developer.
+AI coding assistance was used to help structure the project, draft
+Playwright and Cucumber code, develop SQL queries, and document
+the self-healing locator approach.
+
+Suggestions were checked against the application and test results.
+AI-generated code can contain incorrect locators or assumptions,
+so changes must be reviewed and validated before acceptance.
+
+Before submission, document the specific AI tools used, examples
+of suggestions that required correction, and the validation actually
+performed during development.
